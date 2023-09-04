@@ -1,0 +1,32 @@
+{
+    "name": "mikha-dev/dcat-icon",
+    "alias": "",
+    "description": "Dcat Admin",
+    "type": "library",
+    "keywords": ["dcat-admin", "extension", "icon"],
+    "homepage": "https://github.com/mikha-dev/dcat-icon",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "weiwait",
+            "email": "mail@weiwait.cn"
+        }
+    ],
+    "require": {
+        "php": "^8.1",
+        "mikha-dev/dcat-admin": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Weiwait\\DcatIcon\\": "src/"
+        }
+    },
+    "extra": {
+        "dcat-admin": "Weiwait\\DcatIcon\\DcatIconServiceProvider",
+        "laravel": {
+            "providers": [
+                "Weiwait\\DcatIcon\\DcatIconServiceProvider"
+            ]
+        }
+    }
+}
