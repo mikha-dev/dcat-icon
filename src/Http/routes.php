@@ -1,6 +1,7 @@
 <?php
 
-use Weiwait\DcatIcon\Http\Controllers;
 use Illuminate\Support\Facades\Route;
 
-Route::get('svg-icon', Controllers\SvgIconController::class.'@index');
+Route::resources([
+    'svg-icons' => Dcat\Admin\Http\Controllers\SvgIconController::class
+]);
