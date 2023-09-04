@@ -17,6 +17,8 @@ class SvgIcon extends Model
         'type' => IconType::class
     ];
 
+    protected $fillable = [ 'name', 'icon', 'type' ];
+
     public static function generateCss()
     {
         $stub = file_get_contents(__DIR__ . '/../../resources/assets/css/index.css');

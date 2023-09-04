@@ -22,7 +22,7 @@ class Setting extends Form
             $fullName = 'icon-svg-' . $input['name'];
 
             if (!Storage::disk(config('admin.upload.disk'))->exists('icons/icon-svg.css')) {
-                SvgIcon::generatingIcons();
+                SvgIcon::generateCss();
             }
 
             SvgIcon::query()->updateOrCreate(

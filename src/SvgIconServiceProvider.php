@@ -2,10 +2,10 @@
 
 namespace Dcat\Admin;
 
-use Dcat\Admin\Extend\ServiceProvider;
-use Dcat\Admin\Admin;
 use Dcat\Admin\Form;
-use Dcat\Admin\Form\Field\Icon;
+use Dcat\Admin\Admin;
+use Dcat\Admin\Form\Field\SvgIcon;
+use Dcat\Admin\Extend\ServiceProvider;
 
 class SvgIconServiceProvider extends ServiceProvider
 {
@@ -26,10 +26,9 @@ class SvgIconServiceProvider extends ServiceProvider
 
 		Admin::css(\Storage::disk(config('admin.upload.disk'))->url('icons/icon-svg.css'));
 
-		Form::extend('svgIcon', Icon::class);
-//		Form::extend('oIcon', Form\Field\Icon::class);
+		Form::extend('svgIcon', SvgIcon::class);
 
-		Admin::requireAssets('@mikha-dev.svg-icon');
+		Admin::requireAssets('@mikha-dev.dcat-svg-icon');
 
         $this->publishable();
 	}
