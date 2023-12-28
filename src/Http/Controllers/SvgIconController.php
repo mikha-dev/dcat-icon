@@ -5,6 +5,7 @@ namespace Dcat\Admin\Http\Controllers;
 use Dcat\Admin\Form;
 use Dcat\Admin\Grid;
 use Dcat\Admin\Admin;
+use Dcat\Admin\Layout\Row;
 use Dcat\Admin\Models\SvgIcon;
 use Dcat\Admin\Grid\Displayers\Actions;
 use Dcat\Admin\ToolButtons\RegenerateCssToolButton;
@@ -13,7 +14,11 @@ class SvgIconController extends AdminController
 {
     protected $title = 'Svg Icons';
 
-    protected function grid()
+    protected function grid() {
+        return function (Row $row) {  $row->column(8, $this->_grid());};
+    }
+
+    protected function _grid()
     {
         return new Grid( new SvgIcon(), function (Grid $grid) {
 
